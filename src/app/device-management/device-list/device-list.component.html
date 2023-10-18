@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="input-group">
+          <input type="search" id="form1" class="form-control" [(ngModel)]="searchId" placeholder="Search by ID, marque, or modele" />
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" (click)="searchDevice()">
+              <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <button class="btn btn-success" routerLink="/device-management/device-create">Add Device</button>
+      </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Serial Number</th>
+          <th>Brand</th>
+          <th>Model</th>
+          <th>Company</th>
+          <th>Employee</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let device of devices">
+          <td>{{ device.id }}</td>
+          <td>{{ device.numSrie }}</td>
+          <td>{{ device.marque }}</td>
+          <td>{{ device.modele }}</td>
+          <td>{{ device.entreprise.nom }}</td> 
+          <td>{{ device.emp.username }}</td> 
+          <td>
+            <button class="btn btn-danger" (click)="deleteDevice(device.id)">Delete</button>
+            <button class="btn btn-primary" [routerLink]="['/device-management/device-edit', device.numSrie]">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+  

@@ -1,0 +1,70 @@
+.operations {
+    .operation-wrapper {
+      overflow: hidden;
+      max-height: 100%;
+    }
+    
+    .title {
+      padding: 20px;
+      padding-bottom: 5px;
+      text-align: center;
+      color: #333333;
+      font-size: 18px;
+      font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+    }
+    
+    .operation {
+      display: table-row;
+      border-bottom: 1px solid #f0f0f0;
+      
+      .header {
+        font-weight: bold;
+      }
+      
+      .id{
+         
+            display: table-cell;
+            padding: 20px 30px 20px 30px;
+            font-size: 16px;
+            text-align: center;
+          
+        }
+      .marque{
+         
+        display: table-cell;
+        padding: 20px 30px 20px 30px;
+        font-size: 16px;
+        text-align: center;
+      
+        }   
+      .modele{
+         
+        display: table-cell;
+        padding: 20px 30px 20px 30px;
+        font-size: 16px;
+        text-align: center;
+      
+        }
+      .status {
+        display: table-cell;
+        padding: 20px 30px 20px 30px;
+        font-size: 16px;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        
+        &.confirmed {
+          color: #6920fb;
+        }
+        
+        &.pending {
+          color: #7e0505;
+        }
+        
+        &.shipped {
+          color: #044342;
+        }
+      }
+    }
+  }
+  

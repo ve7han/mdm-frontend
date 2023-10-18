@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="main-container">
+      <div class="side-nav">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col-md-9">
+        <div class="edit-container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Edit Entreprise</h2>
+              <form (ngSubmit)="updateEntreprise()" *ngIf="entreprise">
+                <div class="form-group">
+                  <label for="nom">Nom:</label>
+                  <input type="text" placeholder="Nom" class="form-control" id="nom" name="nom" [(ngModel)]="entreprise.nom" required>
+                </div>
+                <div class="form-group">
+                  <label for="adresse">Adresse:</label>
+                  <input type="text" placeholder="Adresse" class="form-control" id="adresse" name="adresse" [(ngModel)]="entreprise.adresse" required>
+                </div>
+                <div class="form-group">
+                  <label for="capitale">Capitale:</label>
+                  <input type="number" placeholder="Capitale" class="form-control" id="capitale" name="capitale" [(ngModel)]="entreprise.capitale" required>
+                </div>
+                <div class="form-group">
+                  <label for="fondateur">Fondateur:</label>
+                  <input type="text" placeholder="Fondateur" class="form-control" id="fondateur" name="fondateur" [(ngModel)]="entreprise.fondateur" required>
+                </div>
+                <div class="form-group">
+                  <label for="date_creation">Date de création:</label>
+                  <input type="date" class="form-control" id="date_creation" name="date_creation" [(ngModel)]="entreprise.date_creation" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Entreprise</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  

@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="main-container">
+        <div class="side-nav">
+        <app-sidenav></app-sidenav>
+        </div>
+        <div class="col-md-9">
+            <div class="create-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Create Entreprise</h2>
+                        <br>
+                        <form (ngSubmit)="createEntreprise()">
+                        <div class="form-group">
+                            <label for="nom" class="form-label">Nom d'Entreprise:</label>
+                            <input type="text" placeholder="nom d'entreprise" class="form-control" id="nom" name="nom" [(ngModel)]="entreprise.nom" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adresse" class="form-label">Adresse:</label>
+                            <input type="text" placeholder="adresse" class="form-control" id="adresse" name="adresse" [(ngModel)]="entreprise.adresse" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="capitale" class="form-label">Capitale:</label>
+                            <input type="number" placeholder="capitale" class="form-control" id="capitale" name="capitale" [(ngModel)]="entreprise.capitale" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fondateur" class="form-label">Fondateur:</label>
+                            <input type="text" placeholder="fondateur" class="form-control" id="fondateur" name="fondateur" [(ngModel)]="entreprise.fondateur" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="fondateur" class="form-label">Secteur d'activité:</label>
+                            <input type="text" placeholder="Secteur d'activité" class="form-control" id="secteur" name="secteur" [(ngModel)]="entreprise.secteur" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="date_creation" class="form-label">Date de création:</label>
+                            <input type="date" class="form-control" id="date_creation" name="date_creation" [(ngModel)]="entreprise.date_creation" required>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Create Entreprise</button>
+                        </form>
+                    </div>
+                </div>              
+            </div>
+        </div>
+    </div>
+</div>
+    

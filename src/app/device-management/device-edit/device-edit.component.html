@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="main-container">
+      <div class="side-nav">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col-md-9">
+        <div class="edit-container">
+          <div class="row">
+            <div class="col-md-6">
+                <h2>Edit Device</h2>
+                <form (ngSubmit)="updateDevice()" *ngIf="device">
+                <div class="form-group">
+                    <label for="marque">Marque:</label>
+                    <input type="text" placeholder="Marque" class="form-control" id="marque" name="marque" [ngModel]="device.marque" required>
+                </div>
+                <div class="form-group">
+                    <label for="modele">Modèle:</label>
+                    <input type="text" placeholder="Modèle" class="form-control" id="modele" name="modele" [ngModel]="device.modele" required>
+                </div>
+                <div class="form-group">
+                    <label for="nom">Nom d'Entreprise:</label>
+                    <input type="text" placeholder="Nom d'Entreprise" class="form-control" id="nom" name="nom" [ngModel]="device.entreprise" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Update Device</button>
+                </form>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

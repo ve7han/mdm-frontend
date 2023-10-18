@@ -1,0 +1,28 @@
+<div class="operations">
+    <div class="title">Last few operations</div>
+    <div class="operation-wrapper">
+        <div class="operation header">
+            <div class="id">ID</div>
+            <div class="marque">Marque</div>
+            <div class="modele">Modele</div>
+            <div class="status">Status</div>
+        </div>
+      
+      <div class="operation" *ngFor="let operation of operations">
+        <div class="id">{{ operation.id }}</div>
+        <div class="marque">{{ operation.marque }}</div>
+        <div class="modele">{{ operation.modele }}</div>
+        <div
+          class="status"
+          [ngClass]="{
+            confirmed: operation.status === 'added',
+            pending: operation.status === 'edited',
+            shipped: operation.status === 'deleted'
+          }"
+        >
+          {{ operation.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  

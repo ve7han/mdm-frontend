@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="header">
+      <app-header></app-header>
+    </div>
+    <div class="main-container">
+      <div class="side-nav">
+        <app-sidenav></app-sidenav>
+      </div>
+      <div class="col-md-9">
+        <div class="create-container">
+          <div class="row">
+            <div class="col-md-6">
+              <h2>Edit Employee</h2>
+              <br>
+              <form (ngSubmit)="updateEmployee()" *ngIf="employee">
+                <div class="form-group">
+                  <label for="username" class="form-label">Username:</label>
+                  <input type="text" placeholder="username" class="form-control" id="username" name="username" [(ngModel)]="employee.username" required>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="form-label">Password:</label>
+                  <input type="password" placeholder="password" class="form-control" id="password" name="password" [(ngModel)]="employee.password" required>
+                </div>
+                <div class="form-group">
+                  <label for="enabled" class="form-label">Enabled:</label>
+                  <input type="checkbox" class="form-control" id="enabled" name="enabled" [(ngModel)]="employee.enabled" required>
+                </div>
+                <div class="form-group">
+                  <label for="roles" class="form-label">Roles (comma-separated):</label>
+                  <input type="text" placeholder="roles" class="form-control" id="roles" name="roles" [(ngModel)]="employee.roles" required>
+                </div>
+                <div class="form-group">
+                  <label for="fonction" class="form-label">Function:</label>
+                  <input type="text" placeholder="function" class="form-control" id="fonction" name="fonction" [(ngModel)]="employee.fonction" required>
+                </div>
+                <div class="form-group">
+                  <label for="salary" class="form-label">Salary:</label>
+                  <input type="number" placeholder="salary" class="form-control" id="salary" name="salary" [(ngModel)]="employee.salary" required>
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Update Employee</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

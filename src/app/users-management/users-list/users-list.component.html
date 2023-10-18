@@ -1,0 +1,70 @@
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="input-group">
+          <input type="search" id="form1" class="form-control" [(ngModel)]="searchId" placeholder="Search by ID, username, or fonction" />
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" (click)="searchEmployee()">
+              <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <button class="btn btn-success" routerLink="/users-management/users-create">Add User</button>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="input-group">
+            <input type="number" id="form1" class="form-control" [(ngModel)]="salaryInput" placeholder="Search by Salary" />
+            <div class="input-group-append">
+                <button type="button" class="btn btn-primary" (click)="searchBySalary(salaryInput)">
+                    <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+                </button>
+            </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="Search by Fonction" [(ngModel)]="searchByFonctionInput"  placeholder="Search by Fonction" />
+            <div class="input-group-append">
+                <button type="button" class="btn btn-primary" (click)="searchByFonction(searchByFonctionInput)">
+                    <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+                </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Function</th>
+          <th>Salary</th>
+          <th>Role</th>
+          <th>Enabled</th>
+          <th>Entreprise</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.username }}</td>
+          <td>{{ employee.fonction }}</td>
+          <td>{{ employee.salary }}</td>
+          <td>{{ getRolesToString(employee.roles) }}</td>
+          <td>{{ employee.enabled ? 'Yes' : 'No' }}</td>
+          <td>{{ employee.entreprise.nom }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button>
+            <button class="btn btn-primary" [routerLink]="['/users-edit', employee.id]">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

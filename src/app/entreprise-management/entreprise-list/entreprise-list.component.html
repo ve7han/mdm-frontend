@@ -1,0 +1,50 @@
+<br>
+<div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="input-group">
+          <input type="search" id="form1" class="form-control" [(ngModel)]="searchId" placeholder="Search by ID, nom, or adresse" />
+          <div class="input-group-append">
+            <button type="button" class="btn btn-primary" (click)="searchEntreprise()">
+              <fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <button class="btn btn-success" routerLink="/entreprise-management/entreprise-create">Add Entreprise</button>
+      </div>
+    </div>
+    <br>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Adresse</th>
+          <th>Capitale</th>
+          <th>Fondateur</th>
+          <th>Activity Area</th>
+          <th>Date de Création</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entreprise of entreprises">
+          <td>{{ entreprise.id }}</td>
+          <td>{{ entreprise.nom }}</td>
+          <td>{{ entreprise.adresse }}</td>
+          <td>{{ entreprise.capitale }}</td>
+          <td>{{ entreprise.fondateur }}</td>
+          <td>{{ entreprise.secteur }}</td>
+          <td>{{ entreprise.date_creation | date }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteEntreprise(entreprise.id)">Delete</button>
+            <br><br>
+            <button class="btn btn-primary" [routerLink]="['entreprise-management/entreprise-edit', entreprise.id]">Edit</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

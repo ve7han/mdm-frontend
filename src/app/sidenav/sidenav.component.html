@@ -1,0 +1,45 @@
+<div class="nav-items">
+    <div class="nav-item" *ngIf="isLoggedIn() && isAdmin()">
+        <a routerLink="/main" routerLinkActive="active">
+          <fa-icon [icon]="faHouse"></fa-icon>
+          <span>Dashboard</span>
+        </a>
+      </div>
+    <div class="nav-item" *ngIf="isLoggedIn() && isAdmin()">
+      <a routerLink="/entreprises" routerLinkActive="active">
+        <fa-icon [icon]="faNetworkWired"></fa-icon>
+        <span>Entreprises</span>
+      </a>
+    </div>
+    <div class="nav-item" *ngIf="isLoggedIn() && isAdmin()">
+      <a routerLink="/users" routerLinkActive="active">
+        <fa-icon [icon]="faUsers"></fa-icon>
+        <span>Users</span>
+      </a>
+    </div>
+    <div class="nav-item nav-item-tree" *ngIf="isLoggedIn() && isAdmin()">
+      <a (click)="toggleTreeView()">
+        <fa-icon [icon]="faMobile"></fa-icon>
+        <span>Devices</span>
+        <fa-icon [icon]="isTreeViewOpen ? faCaretUp : faCaretDown" class="tree-icon"></fa-icon>
+      </a>
+      <div class="nav-tree" [ngClass]="{ 'tree-open': isTreeViewOpen }">
+        <a routerLink="/device-management/device-create" routerLinkActive="active">
+          <fa-icon [icon]="faCirclePlus"></fa-icon>
+          <span>Add Device</span>
+        </a>
+        <div class="tree-item-separator"></div> <!-- Add vertical spacing -->
+        <a routerLink="/devices" routerLinkActive="active">
+          <fa-icon [icon]="faList"></fa-icon>
+          <span>List Device</span>
+        </a>
+      </div>
+    </div>
+    <div class="nav-item nav-item-bottom" *ngIf="isLoggedIn() && isAdmin()">
+      <a routerLink="/settings" routerLinkActive="active">
+        <fa-icon [icon]="faGear"></fa-icon>
+        <span>Settings</span>
+      </a>
+    </div>
+  </div>
+  

@@ -1,0 +1,49 @@
+.main-container {   
+  display: flex;
+  .side-nav {
+    width: 415px;
+    min-width: 230px;
+    min-height: calc(100vh - 70px);
+    background-color: #113c60;
+    color: #fff;
+    box-shadow: 5px 5px 5px #939393;
+    @media only screen and (max-width: 1300px) {
+      width: 100px;
+      min-width: 100px;
+    }
+  }
+  .main {
+    padding: 30px;
+  }
+
+.top-section {
+  margin-left: 50px;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.middle-section {
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.widget {
+  height: 400px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: 5px 5px 5px #939393;
+  flex: 1 0 calc(50% - 20px);
+}
+
+.widget.left {
+  margin-right: 10px;
+}
+
+.widget.right {
+  margin-left: 10px;
+}
+}

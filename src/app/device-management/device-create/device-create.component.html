@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="header">
+    <app-header></app-header>
+  </div>
+  <div class="main-container">
+    <div class="side-nav">
+      <app-sidenav></app-sidenav>
+    </div>
+    <div class="col-md-9">
+      <div class="create-container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Create Device</h2>
+            <form (ngSubmit)="createDevice()" #deviceForm="ngForm">
+              <div class="form-group">
+                <label for="numSerie">Serial Number:</label>
+                <input type="text" class="form-control" id="numSerie" name="numSerie" [(ngModel)]="devices.numSrie" required>
+              </div>
+              <div class="form-group">
+                <label for="marque">Brand:</label>
+                <input type="text" class="form-control" id="marque" name="marque" [(ngModel)]="devices.marque" required>
+              </div>
+              <div class="form-group">
+                <label for="modele">Model:</label>
+                <input type="text" class="form-control" id="modele" name="modele" [(ngModel)]="devices.modele" required>
+              </div>
+              <div class="form-group">
+                <label for="entreprise">Company ID:</label>
+                <input type="text" class="form-control" id="entreprise" name="entreprise" [(ngModel)]="devices.entreprise.id" required>
+              </div>
+              <div class="form-group">
+                <label for="emp">Employee ID:</label>
+                <input type="text" class="form-control" id="emp" name="emp" [(ngModel)]="devices.emp.id" required>
+              </div>
+              <button type="submit" class="btn btn-primary">Create Device</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  
